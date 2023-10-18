@@ -1,0 +1,125 @@
+body {
+  background-color: #000000;
+  overflow: hidden;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 80vw;
+
+  background: linear-gradient(-233deg, #000 15%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .one1 {
+  display: none;
+  height: 100vh;
+}
+
+main .one1.selecionado {
+  display: block;
+}
+
+main .one1 .imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conteudo {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 380px;
+  z-index: 1;
+}
+
+.conteudo .nome-personagem {
+  color: #ffffff;
+  font-size: 48px;
+  font-family: "secular one";
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+  color: #ffffff;
+  font-family: "Rubik";
+  line-height: 24px;
+}
+
+.conteudo .logo {
+  background-size: cover;
+  background-image: url("../imagens/one-piece-logo.png");
+  height: 100px;
+  width: 230px;
+  margin-bottom: 35px;
+}
+
+.botoes {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 180px;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+  border: none;
+  background: #000000;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.botoes .botao img {
+  border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px aqua;
+  animation: animar 4s linear infinite;
+}
+
+.botoes .botao.selecionado :hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px aqua;
+}
+
+.botoes .botao {
+  box-shadow: 0 0 10px rgb(56, 252, 7);
+}
+.botoes .botao :hover {
+  box-shadow: 0 0 10px rgb(58, 216, 19);
+  transform: scale(1.2);
+}
+
+.botoes .botao.selecionado::before {
+  content: "";
+  position: absolute;
+  inset: -5px 35px;
+  transition: 0.5s;
+}
+
+@keyframes animar {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
